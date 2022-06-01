@@ -49,12 +49,13 @@ public class Ventana extends JFrame {
 	 * Create the frame.
 	 */
 	public Ventana() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Rafael Villaneda\\Desktop\\Nueva carpeta (2)\\T2\\Compilador\\recursosVisuales\\LOGO-sat-.jpeg"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Ventana.class.getResource("/Imagenes/LOGO-sat-.jpeg")));
 		setForeground(new Color(255, 255, 204));
 		setTitle("Generador RFC");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 720, 497);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(240, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -105,7 +106,7 @@ public class Ventana extends JFrame {
 		tokens.setEnabled(false);
 		scrollPane.setViewportView(tokens);
 		
-		JLabel lblTablaDeTokenssimbolos = new JLabel("Tabla de tokens/simbolos");
+		JLabel lblTablaDeTokenssimbolos = new JLabel("Tabla de tokens/s\u00EDmbolos");
 		lblTablaDeTokenssimbolos.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		lblTablaDeTokenssimbolos.setBounds(232, 11, 232, 32);
 		contentPane.add(lblTablaDeTokenssimbolos);
@@ -140,15 +141,16 @@ public class Ventana extends JFrame {
 		
 		JButton btn_generar_RFC = new JButton("Generar RFC");
 		btn_generar_RFC.setEnabled(false);
-		btn_generar_RFC.setBounds(45, 391, 103, 23);
+		btn_generar_RFC.setBounds(45, 391, 122, 23);
 		contentPane.add(btn_generar_RFC);
 		
-		JButton btn_analisador_lexico = new JButton("Analissador L\u00E9xico");
+		JButton btn_analisador_lexico = new JButton("Analizador L\u00E9xico");
 		btn_analisador_lexico.setForeground(Color.BLUE);
 		btn_analisador_lexico.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//Aquí creamos el objeto de tipo Analisador_Lexico y le pasamos a su constructor las cadenas de texto que necesita
-				Analisador_Lexico analixadorlexico=new Analisador_Lexico(caja_nom.getText().replace(" ",""), caja_apPaterno.getText().replace(" ",""),caja_apMaterno.getText().replace(" ",""), 
+				Analisador_Lexico analixadorlexico=new Analisador_Lexico(caja_nom.getText().replace(" ",""), 
+						caja_apPaterno.getText().replace(" ",""),caja_apMaterno.getText().replace(" ",""), 
 						""+combo_dias.getSelectedItem().toString()+combo_meses.getSelectedItem().toString()+combo_años.getSelectedItem().toString());
 				//Aqui llamamos el metodo analixadorLexivo el cual hace todo el análisis para la indentificaion de los tokens.
 				analixadorlexico.analixadorLexivo();
@@ -157,11 +159,11 @@ public class Ventana extends JFrame {
 				/*
 				 * Ahora aqui imprimimos los componentes en su respectivo orden en la GUI
 				 */
-				String tokensImprimir="====Tokens tipo alfabetico===="+"\n";
+				String tokensImprimir="====Tokens tipo Alfabético ===="+"\n";
 				for (String posicion : analixadorlexico.listaTokenAlfabetico) {
 					tokensImprimir+= posicion+"\n";
 				}
-				tokensImprimir+="====Tokens tipo numerico===="+"\n";
+				tokensImprimir+="====Tokens tipo Numérico===="+"\n";
 				for (String posicion : analixadorlexico.listaTokenNumerico) {
 					tokensImprimir+= posicion+"\n";
 				}
@@ -169,12 +171,16 @@ public class Ventana extends JFrame {
 				for (String posicion : analixadorlexico.listaTokenError) {
 					tokensImprimir+= posicion+"\n";
 				}
-				System.out.print(tokensImprimir);
 				tokens.setText(tokensImprimir);
 				
 			}
 		});
 		btn_analisador_lexico.setBounds(474, 59, 159, 23);
 		contentPane.add(btn_analisador_lexico);
+		
+		JButton btn_sintactico = new JButton("An\u00E1lisis Sint\u00E1ctico");
+		btn_sintactico.setForeground(Color.BLUE);
+		btn_sintactico.setBounds(474, 132, 159, 23);
+		contentPane.add(btn_sintactico);
 	}
 }

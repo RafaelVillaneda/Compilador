@@ -2,6 +2,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Analisador_Lexico {
+	/*
+	 * Creamos las variables necesarias para el funcionamiento del analixador lexico
+	 */
 	private String nombre;
 	private String apPaterno;
 	private String apMaterno;
@@ -13,6 +16,7 @@ public class Analisador_Lexico {
 	ArrayList<String> listaTokenNumerico=new ArrayList<String>();
 	ArrayList<String> listaTokenError=new ArrayList<String>();
 	
+	//Contructor del analisador
 	public Analisador_Lexico(String nombre, String apPaterno, String apMaterno, String fechaNac) {
 		super();
 		this.nombre = nombre;
