@@ -93,7 +93,7 @@ public class Ventana extends JFrame {
 		caja_apMaterno.setBounds(10, 220, 144, 32);
 		contentPane.add(caja_apMaterno);
 		
-		JLabel lblIngresaTuApellido_2_1 = new JLabel("Ingresa tu edad:");
+		JLabel lblIngresaTuApellido_2_1 = new JLabel("Ingresa tu edad: ");
 		lblIngresaTuApellido_2_1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		lblIngresaTuApellido_2_1.setBounds(10, 263, 202, 32);
 		contentPane.add(lblIngresaTuApellido_2_1);
@@ -114,34 +114,34 @@ public class Ventana extends JFrame {
 		JComboBox combo_dias = new JComboBox();
 		combo_dias.setToolTipText("Elige tu d\u00EDa de nacimiento");
 		combo_dias.setModel(new DefaultComboBoxModel(new String[] {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
-		combo_dias.setBounds(10, 318, 47, 22);
+		combo_dias.setBounds(10, 355, 47, 22);
 		contentPane.add(combo_dias);
 		
 		JLabel lblNewLabel_1 = new JLabel("-");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
-		lblNewLabel_1.setBounds(67, 311, 14, 32);
+		lblNewLabel_1.setBounds(67, 348, 14, 32);
 		contentPane.add(lblNewLabel_1);
 		
 		JComboBox combo_meses = new JComboBox();
 		combo_meses.setToolTipText("Elige tu mes de nacimiento\r\n");
 		combo_meses.setModel(new DefaultComboBoxModel(new String[] {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"}));
-		combo_meses.setBounds(79, 318, 47, 22);
+		combo_meses.setBounds(79, 355, 47, 22);
 		contentPane.add(combo_meses);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("-");
 		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
-		lblNewLabel_1_1.setBounds(136, 311, 14, 32);
+		lblNewLabel_1_1.setBounds(136, 348, 14, 32);
 		contentPane.add(lblNewLabel_1_1);
 		
 		JComboBox combo_años = new JComboBox();
 		combo_años.setToolTipText("Elige los dos ultimos n\u00FAmero de tu a\u00F1o de nacimiento");
 		combo_años.setModel(new DefaultComboBoxModel(new String[] {"00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99"}));
-		combo_años.setBounds(154, 318, 47, 22);
+		combo_años.setBounds(154, 355, 47, 22);
 		contentPane.add(combo_años);
 		
 		JButton btn_generar_RFC = new JButton("Generar RFC");
 		btn_generar_RFC.setEnabled(false);
-		btn_generar_RFC.setBounds(45, 391, 122, 23);
+		btn_generar_RFC.setBounds(45, 409, 122, 23);
 		contentPane.add(btn_generar_RFC);
 		
 		JButton btn_analisador_lexico = new JButton("Analizador L\u00E9xico");
@@ -175,12 +175,38 @@ public class Ventana extends JFrame {
 				
 			}
 		});
-		btn_analisador_lexico.setBounds(474, 59, 159, 23);
+		btn_analisador_lexico.setBounds(535, 18, 159, 23);
 		contentPane.add(btn_analisador_lexico);
 		
 		JButton btn_sintactico = new JButton("An\u00E1lisis Sint\u00E1ctico");
+		btn_sintactico.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//Obtenemos los datos de las cajas de texto de la interfaz:
+				String nombre=caja_nom.getText();
+				String apellidoPaterno=caja_apPaterno.getText();
+				String apellidoMaterno=caja_apMaterno.getText();
+				
+			}
+		});
 		btn_sintactico.setForeground(Color.BLUE);
-		btn_sintactico.setBounds(474, 132, 159, 23);
+		btn_sintactico.setBounds(535, 59, 159, 23);
 		contentPane.add(btn_sintactico);
+		
+		JLabel lblIngresaTuApellido_2_1_1 = new JLabel("Formato: dd-mm-aa");
+		lblIngresaTuApellido_2_1_1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+		lblIngresaTuApellido_2_1_1.setBounds(10, 312, 202, 32);
+		contentPane.add(lblIngresaTuApellido_2_1_1);
+		
+		JLabel Label_nombre = new JLabel("_");
+		Label_nombre.setBounds(535, 149, 159, 32);
+		contentPane.add(Label_nombre);
+		
+		JLabel Label_nombre_1 = new JLabel("_");
+		Label_nombre_1.setBounds(535, 220, 159, 32);
+		contentPane.add(Label_nombre_1);
+		
+		JLabel Label_nombre_2 = new JLabel("_");
+		Label_nombre_2.setBounds(535, 289, 159, 32);
+		contentPane.add(Label_nombre_2);
 	}
 }

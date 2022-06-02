@@ -54,33 +54,33 @@ public class Analisador_Lexico {
 		//Hacemos el analisis para la cadena nombre y asi sacar los diferentes componetes que existan
 		for (int i = 0; i < nombre.length(); i++) {
 			if(Character.isLetter(nombre.charAt(i))) {
-				listaTokenAlfabetico.add(nombre.charAt(i)+"");
+				listaTokenAlfabetico.add(nombre.charAt(i)+" --> Letra encontrada en el campo nombre");
 			}else if(Character.isDigit(nombre.charAt(i))) {
-				listaTokenNumerico.add(nombre.charAt(i)+"");
+				listaTokenNumerico.add(nombre.charAt(i)+"--> Numero encontrado en nombre");
 			}else {
-				listaTokenError.add(nombre.charAt(i)+"");
+				listaTokenError.add(nombre.charAt(i)+" --> caracter desconocido en nombre");
 			}
 			
 		}
 		//Hacemos el analisis para la cadena apPaterno y asi sacar los diferentes componetes que existan
 		for (int i = 0; i < apPaterno.length(); i++) {
 			if(Character.isLetter(apPaterno.charAt(i))) {
-				listaTokenAlfabetico.add(apPaterno.charAt(i)+"");
+				listaTokenAlfabetico.add(apPaterno.charAt(i)+" --> Letra encontrada en el campo apellido paterno");
 			}else if(Character.isDigit(apPaterno.charAt(i))) {
-				listaTokenNumerico.add(apPaterno.charAt(i)+"");
+				listaTokenNumerico.add(apPaterno.charAt(i)+"--> Numero encontrado en el campo apellido paterno");
 			}else {
-				listaTokenError.add(apPaterno.charAt(i)+"");
+				listaTokenError.add(apPaterno.charAt(i)+"--> caracter desconocido en apellido paterno");
 			}
 			
 		}
 		//Hacemos el analisis para la cadena apMaterno y asi sacar los diferentes componetes que existan
 		for (int i = 0; i < apMaterno.length(); i++) {
 			if(Character.isLetter(apMaterno.charAt(i))) {
-				listaTokenAlfabetico.add(apMaterno.charAt(i)+"");
+				listaTokenAlfabetico.add(apMaterno.charAt(i)+" --> Letra encontrada en el campo apellido materno");
 			}else if(Character.isDigit(apMaterno.charAt(i))) {
-				listaTokenNumerico.add(apMaterno.charAt(i)+"");
+				listaTokenNumerico.add(apMaterno.charAt(i)+"--> Numero encontrado en el campo apellido materno");
 			}else {
-				listaTokenError.add(apMaterno.charAt(i)+"");
+				listaTokenError.add(apMaterno.charAt(i)+" --> caracter desconocido en el campo apellido materno");
 			}
 			
 		}
@@ -89,7 +89,7 @@ public class Analisador_Lexico {
 			if(Character.isLetter(fechaNac.charAt(i))) {
 					listaTokenAlfabetico.add(fechaNac.charAt(i)+"");
 			}else if(Character.isDigit(fechaNac.charAt(i))) {
-					listaTokenNumerico.add(fechaNac.charAt(i)+"");
+					listaTokenNumerico.add(fechaNac.charAt(i)+"--> Numero encontrado en los campos de fecha");
 			}else {
 					listaTokenError.add(fechaNac.charAt(i)+"");
 				}
